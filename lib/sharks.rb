@@ -1,5 +1,10 @@
 class Time
+
   def strfjtime(input)
+    strficu(input)
+  end
+  
+  def strficu(input)
     a = input.split("'")
     chunks = a.values_at(* a.each_index.select {|i| i.even?})
     chunks.map!{|a| a == "" ? "'" : a}
