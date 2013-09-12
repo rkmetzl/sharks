@@ -1,12 +1,14 @@
 sharks
 =========
 
-Convert SimpleDateFormat Java time declarations into Ruby-friendly ones
+Format ICU SimpleDateFormat time declarations in Ruby
 
 What?
 =========
 
-So say someone says "Hey, I want the time displayed in this format: `yyyy.MM.dd G 'at' HH:mm:ss z`"<br>
+It's well known that sharks are always on time, and not just the sea creatures, either. Land sharks, loan sharks, lone sharks, shark attacks, and used car salesmen are all known for their poignancy with regards to timing. That's why `sharks` exists. but what does `sharks` do?
+
+So say someone says "Hey, I want the time displayed in the following format: `yyyy.MM.dd G 'at' HH:mm:ss z`"<br>
 And you're in Ruby.<br>
 And you're like "No way, Jose! I need a strftime-readable string there!"<br>
 
@@ -17,25 +19,26 @@ or "Where are my pants?"<br>
 
 All because of `sharks`.
 
-`sharks` adds a new Time method: `strfjtime`. <br>
-`strfjtime` stands for "Sharks Tackles Really Fun Java(/other) Time Inconsistencies for Me. Egad!"
+`sharks` adds a new Time method: `strficu`. <br>
+`strficu` stands for "Sharks Tackles Really Fun and Interesting Common Usages (...of various time-based strings and timestamps used in Ruby). We're still working on the acronym.
 
 
 Usage:
 ==========
 
-once requiring 'sharks' (you know, with `require 'sharks'`), simply call .strfjtime from a Time object.
+once requiring 'sharks' (you know, with `require 'sharks'`), simply call .strficu from a Time object.
 
 For example:
 <pre>
-irb(main)> Time.now.strfjtime("yyyy.MMMMM.dd GGG hh:mm aaa")
+irb(main)> Time.now.strficu("yyyy.MMMMM.dd GGG hh:mm aaa")
 => "2013.September.9 AD 11:18 pm"
 </pre>
 
 or
+
 <pre>
-irb(main)> Time.now.strfjtime("hh 'o''clock' a, zzzz")
-=> "11 o'clock pm, EDT"
+irb(main)> "I lost my pants around #{Time.now.strficu("hh 'o''clock' a, zzzz")}"
+=> "I lost my pants around 11 o'clock PM, EDT"
 </pre>
 
 And that's it! Easy peasy.
