@@ -56,10 +56,9 @@ Contributions:
 =========
 
 A special thanks to my coworker and good friend Michael for his thoughts on this.<br>
-You can find him here: http://github.com/desperatethelark
+You can find him here: http://github.com/desperatethelark<br>
 
-There are TONS of small discrepancies between these time formats. I have tried to handle all that I could, but I'm sure I missed some obvious ones. Cloning/pull requests would be best, but if you have an idea and no gumption, an email to me would be neat.
-
+The ICU spec is a complicated one and `sharks` does not yet support everything it has to offer. If you'd like to contribute code, I ask that you at least take a gander through http://userguide.icu-project.org/formatparse/datetime before making any pull requests.
 Copyright
 ========
 
